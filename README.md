@@ -27,13 +27,15 @@ Spoke 2 VNet - 10.2.0.0/16
 1. Created hub and spoke VNets
 2. Peered spoke VNets to hub VNet
 3. Deployed Linux NVA in hub and enabled IP forwarding
-4. Created UDRs on spoke subnets pointing traffic to NVA
-5. Configured NSGs to allow ICMP and SSH
-6. Verified private IP connectivity between spokes
+4. Deployed Linux VMs in each spoke
+5. Created UDRs on spoke subnets pointing traffic to NVA
+6. Configured NSGs to allow ICMP and SSH from specific addresses
+7. Verified private IP connectivity between spokes
 
 ## Validation
-- Successfully pinged Spoke 2 VM from Spoke 1 VM using private IPs
-- Verified routing paths using UDRs and Linux routing tables
+Connectivity was validated by:
+- SSH access between spoke VMs
+- Successful ICMP (ping) between private IPs across spokes
 
 Screenshots are available in the /screenshots directory.
 
@@ -43,6 +45,9 @@ Screenshots are available in the /screenshots directory.
 - Linux IP forwarding must be enabled for routing to function
 
 ## Skills Demonstrated
-- Azure Networking (AZ-104)
-- Linux Networking
-- Routing and Traffic Control
+- Azure Virtual Networks (VNets)
+- VNet Peering
+- Linux Virtual Machines
+- Network Security Groups (NSGs)
+- User Defined Routes (UDRs)
+- IP Forwarding (Linux)
